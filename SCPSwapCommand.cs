@@ -33,15 +33,7 @@ namespace SCPSwap
             Timing.CallDelayed(0.01f, () =>
             {
                 SCPSwapCommand.SwapList = new Dictionary<int, int>();
-                //AprilF = Synapse.Get<SchematicService>().SpawnSchematic(100, new Vector3(0, 0, 0));
-                //Synapse.Get<PlayerService>().GetPlayerByUserId("2").Position + new Vector3(0, 5, 0)
             });
-        }
-
-        [EventHandler]
-        public void OnUpdate(UpdateEvent ev)
-        {
-            //AprilF.Rigidbody.MoveRotation(Quaternion.Euler(0, 10, 0));
         }
     }
 
