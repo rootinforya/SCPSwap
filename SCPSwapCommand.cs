@@ -122,9 +122,9 @@ namespace SCPSwap
         [EventHandler]
         public void OnRespawn(SpawnTeamEvent ev)
         {
-            if(ev.TeamId == (uint)Team.ChaosInsurgency)
+            if (ev.TeamId == (uint)Team.ChaosInsurgency)
             {
-                foreach(SynapsePlayer player in ev.Players)
+                foreach (SynapsePlayer player in ev.Players)
                 {
                     player.FakeRoleManager.VisibleRole.RoleTypeId = RoleTypeId.ChaosRifleman;
                 }
@@ -137,7 +137,7 @@ namespace SCPSwap
                 }
             }
         }
-        
+
         [EventHandler]
         public void OnDeath(DeathEvent ev)
         {
@@ -146,7 +146,7 @@ namespace SCPSwap
             {
                 moaiPlayer = null;
                 Moai.Destroy();
-            }   
+            }
         }
     }
 
@@ -155,7 +155,7 @@ namespace SCPSwap
         CommandName = "SCPSwap",
         Aliases = new[] { "scpswap" },
         Description = "Lets you switch role with another already existing SCP",
-        Platforms = new[] {CommandPlatform.PlayerConsole}
+        Platforms = new[] { CommandPlatform.PlayerConsole }
     )]
     public class SCPSwapCommand : SynapseCommand
     {
@@ -178,9 +178,9 @@ namespace SCPSwap
                 SwapList.Add(context.Player.PlayerId, _plugin.Config.roleList[_role]);
                 result.Response = "Request sent";
 
-                foreach(SynapsePlayer player in Synapse.Get<PlayerService>().Players)
+                foreach (SynapsePlayer player in Synapse.Get<PlayerService>().Players)
                 {
-                    if(SwapList[context.Player.PlayerId] == player.RoleID)
+                    if (SwapList[context.Player.PlayerId] == player.RoleID)
                     {
                         player.SendWindowMessage($"{context.Player.NickName}({context.Player.RoleName}) " +
                             $"{_plugin.Translation.scpSwapRequest1} .scpswap {context.Player.RoleName} " +
